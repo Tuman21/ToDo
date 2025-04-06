@@ -12,17 +12,39 @@ function ToDoList (){
 
     function addToDo(){
 
+        if(newTodo.trim() !== ''){
+            setTodos( t => [...t, newTodo]);
+            setNewTodo('');
+        }
     }
 
     function removeToDo(index){
+        const updatedTodos = todos.filter((element, i) => i !== index);
+        setTodos(updatedTodos);
+
 
     }
 
     function moveToDoUp(index){
+        if(index > 0){
+            const updatedTodos = [...todos];
+            const temp = updatedTodos[index - 1];
+            updatedTodos[index - 1] = updatedTodos[index];
+            updatedTodos[index] = temp;
+            setTodos(updatedTodos);
+        }
 
     }
 
     function moveToDoDown(index){
+
+        if(index < todos.length - 1){
+            const updatedTodos = [...todos];
+            const temp = updatedTodos[index + 1];
+            updatedTodos[index + 1] = updatedTodos[index];
+            updatedTodos[index] = temp;
+            setTodos(updatedTodos);
+        }
 
     }
 
