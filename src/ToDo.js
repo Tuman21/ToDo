@@ -95,7 +95,7 @@ function ToDoList (){
                     </button>
                     <button 
                     className='Complete-button'
-                    onClick={() => moveToDoDown(index)}>
+                    onClick={() => CompleteToDo(index)}>
                         ✔️
                     </button>
                 </li>

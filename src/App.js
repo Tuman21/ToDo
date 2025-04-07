@@ -1,4 +1,5 @@
 import ToDoList from './ToDo';
+import Nav from './nav';
 import './App.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -28,7 +29,10 @@ const store = createStore(
 
 function App() {
   return (
+    <div>
+      <Nav />
     <ToDoList />
+    </div>
   );
 }
 
