@@ -5,9 +5,16 @@
   
 }
 
+body {
+  background-color: #e2dcea;
+  font-family: Arial, sans-serif;
+}
 
-
-
+nav {
+  background-color: #6600ff;
+  padding: 10px;
+  text-align: center;
+}
 
 
 
