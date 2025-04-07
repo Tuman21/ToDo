@@ -48,6 +48,12 @@ function ToDoList (){
 
     }
 
+    function CompleteToDo(index){
+        const updatedTodos = [...todos];
+        updatedTodos.splice(index, 1);
+        setTodos(updatedTodos);
+    }
+
     return(
         <div className='TodoList'>
 
@@ -72,20 +78,25 @@ function ToDoList (){
                     <span className='text'>
                         {todo}
                     </span>
-                    <button
-                    className='delete-button'
-                    onClick={() => removeToDo(index)}>
-                        Delete
-                    </button>
                     <button 
                     className='move-button'
                     onClick={() => moveToDoUp(index)}>
-                        MoveUp
+                        ☝️
                     </button>
                     <button 
                     className='move-button'
                     onClick={() => moveToDoDown(index)}>
-                        MoveDown
+                        👇
+                    </button>
+                    <button
+                    className='delete-button'
+                    onClick={() => removeToDo(index)}>
+                        ❌
+                    </button>
+                    <button 
+                    className='Complete-button'
+                    onClick={() => moveToDoDown(index)}>
+                        ✔️
                     </button>
                 </li>
     )}
