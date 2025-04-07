@@ -1,10 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ToggleButton from './toggle';
 
 function ToDoList (){
     const [todos, setTodos] = useState(['Todo 1', 'Todo 2', 'Todo 3']);
     const [newTodo, setNewTodo] = useState('');
+    
+    
 
     function handleChange(event) {
         setNewTodo(event.target.value);
@@ -49,12 +52,12 @@ function ToDoList (){
     }
 
     function CompleteToDo(index){
-        const updatedTodos = [...todos];
-        updatedTodos.splice(index, 1);
-        setTodos(updatedTodos);
+        
     }
+    
 
     return(
+
         <div className='TodoList'>
 
             <h1>To Do List</h1>
@@ -79,25 +82,22 @@ function ToDoList (){
                         {todo}
                     </span>
                     <button 
-                    className='move-button'
+                    className='move-button btn btn-outline-light'
                     onClick={() => moveToDoUp(index)}>
                         ☝️
                     </button>
                     <button 
-                    className='move-button'
+                    className='move-button btn btn-outline-light'
                     onClick={() => moveToDoDown(index)}>
                         👇
                     </button>
                     <button
-                    className='delete-button'
+                    className='delete-button btn btn-outline-danger'
                     onClick={() => removeToDo(index)}>
                         ❌
                     </button>
-                    <button 
-                    className='Complete-button'
-                    onClick={() => CompleteToDo(index)}>
-                        ✔️
-                    </button>
+                    <ToggleButton/>
+                    
                 </li>
     )}
             </ol>
